@@ -18,6 +18,8 @@ pygame.display.set_caption('Bubbles')
 fps = pygame.time.Clock()
 
 
+#This game is to be upated to Python 3!!!!! Exciting!
+
 class cell():
     def __init__(self, bubbles, player):
         self.bubbles = bubbles
@@ -28,9 +30,9 @@ def load_image(name):
     fullname = os.path.join('resources', name)
     try:
         image = pygame.image.load(fullname).convert_alpha()
-    except pygame.error, message:
-        print 'Cannot load image:', name
-        raise SystemExit, message
+    except (pygame.error, message):
+        print ('Cannot load image:', name)
+        raise (SystemExit, message)
     image = pygame.transform.smoothscale(image, (CELLWIDTH, CELLWIDTH))
     return image
            
@@ -43,9 +45,9 @@ def load_sound(name):
     fullname = os.path.join('resources', name)
     try:
         sound = pygame.mixer.Sound(fullname)
-    except pygame.error, message:
-        print 'Cannot load sound:', wav
-        raise SystemExit, message
+    except (pygame.error, message):
+        print ('Cannot load sound:', wav)
+        raise (SystemExit, message)
     return sound
 
 def getboardsize():
