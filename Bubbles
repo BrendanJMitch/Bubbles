@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd /usr/games
+python bubbles.py
